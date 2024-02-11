@@ -2,13 +2,13 @@ package main
 
 import (
 	"github.com/aws/aws-lambda-go/lambda"
-	r "github.com/marcoschiavello/Orbitex/internal/routers"
-	t "github.com/marcoschiavello/Orbitex/internal/types"
+	"github.com/marcoschiavello/Orbitex/internal/routers"
+	T "github.com/marcoschiavello/Orbitex/internal/types"
 )
 
-func handler(req t.Request) (t.Response, error) {
+func handler(req T.Request) (T.Response, error) {
 
-	return r.AccountRouter(req)
+	return routers.AccountRouter(req)
 }
 
 func main() {

@@ -7,3 +7,7 @@ import (
 type Request events.APIGatewayProxyRequest
 
 type Response events.APIGatewayProxyResponse
+
+type ReqContext events.APIGatewayProxyRequestContext
+
+type ReqIdentity events.APIGatewayRequestIdentity

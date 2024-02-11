@@ -1,23 +1,24 @@
-package tests
+package main
 
 import (
 	"testing"
 
 	"github.com/aws/aws-lambda-go/events"
-	_ "github.com/marcoschiavello/Orbitex/cmd/accountService"
+	http "github.com/marcoschiavello/Orbitex/internal/types"
 )
 
+// TODO: change tests
 func TestHandler(t *testing.T) {
 	testCases := []struct {
 		name          string
-		request       events.APIGatewayProxyRequest
+		request       http.Request
 		expectedBody  string
 		expectedError error
 	}{
 		{
 			// mock a request with an empty SourceIP
 			name: "empty IP",
-			request: events.APIGatewayProxyRequest{
+			request: http.Request{
 				RequestContext: events.APIGatewayProxyRequestContext{
 					Identity: events.APIGatewayRequestIdentity{
 						SourceIP: "",
@@ -30,7 +31,7 @@ func TestHandler(t *testing.T) {
 		{
 			// mock a request with a localhost SourceIP
 			name: "localhost IP",
-			request: events.APIGatewayProxyRequest{
+			request: http.Request{
 				RequestContext: events.APIGatewayProxyRequestContext{
 					Identity: events.APIGatewayRequestIdentity{
 						SourceIP: "127.0.0.1",

@@ -1,2 +1,2 @@
 # Orbitex
-Marketplace for sell whatever you whant WHEREVER you want
+Marketplace to sell whatever you want WHEREVER you want
